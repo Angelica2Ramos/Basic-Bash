@@ -1,0 +1,29 @@
+#!/bin/bash
+
+display_menu(){
+        echo "Welcome to Desserts and Desserts"
+        echo "SELECT YOUR FAVORITE DESSERT";
+        echo "1. Cheesecake"
+        echo "2. Ice Cream"
+        echo "3. Tres Leches"
+        echo "4. Strawberries and Cream"
+        echo "5. Exit from menu "
+        echo -n "Enter your menu choices [1-5]: "
+}
+
+process_choice(){
+        case $1 in
+                1) echo "You selected Cheesecake." ;;
+                2) echo "You selected Ice Cream." ;;
+                3) echo "You selected Tres Leches." ;;
+                4) echo "You selected Strawberries and Cream." ;;
+                5) echo "Thank you for visiting Dessert and Dessert. Have a nice day!" && exit ;;
+                *) echo "Invalid choice. Please enter a number between 1 and 5." ;;
+        esac
+}
+
+while true ; do
+        display_menu
+        read choice
+        process_choice $choice
+done
